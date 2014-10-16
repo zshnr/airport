@@ -4,7 +4,7 @@ describe('The airport', function(){
 		airport = new Airport;
 	});
 
-	describe('interacts with airplane', function(){
+	describe('interacts with airplane:', function(){
 		
 		beforeEach(function(){
 			plane = new Plane;
@@ -27,10 +27,15 @@ describe('The airport', function(){
 
 	});
 
-	describe('interacts with passenger', function(){
+	describe('interacts with passenger:', function(){
 
 		it('should have a passengers array', function(){
 			expect(airport.passengers instanceof Array).toBe(true)
+		});
+
+		it('should accept a passenger', function(){
+			airport.checkIn(passenger);
+			expect(airport.passengers.length).toEqual(1)
 		});
 
 	});
