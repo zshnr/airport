@@ -34,6 +34,7 @@ describe('The airport', function(){
 		});
 
 		it('should accept a passenger', function(){
+			passenger = new Passenger;
 			airport.checkIn(passenger);
 			expect(airport.passengers.length).toEqual(1)
 		});
