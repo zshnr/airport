@@ -1,3 +1,4 @@
 function Airport(){
 	this.planes = [];
 };
+
