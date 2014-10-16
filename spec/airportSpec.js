@@ -1,14 +1,16 @@
 describe('The airport', function(){
 
+	beforeEach(function(){
+		airport = new Airport;
+	});
+
 	describe('interacts with airplane', function(){
 		
 		beforeEach(function(){
-			airport = new Airport;
 			plane = new Plane;
 		});
 
-		it('it should have a planes array',function(){
-			airport = new Airport;
+		it('should have a planes array', function(){
 			expect(airport.planes instanceof Array).toBe(true)
 		});
 
@@ -22,5 +24,14 @@ describe('The airport', function(){
 			airport.takeoff(plane);
 			expect(airport.planes.length).toEqual(0)
 		});
+
+	});
+
+	describe('interacts with passenger', function(){
+
+		it('should have a passengers array', function(){
+			expect(airport.passengers instanceof Array).toBe(true)
+		});
+
 	});
 });
