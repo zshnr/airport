@@ -29,13 +29,23 @@ describe('The airport', function(){
 
 	describe('interacts with passenger:', function(){
 
+		beforeEach(function(){
+			passenger = new Passenger;
+		});
+
 		it('should have a passengers array', function(){
 			expect(airport.passengers instanceof Array).toBe(true)
 		});
 
-		it('should accept a passenger', function(){
+		it('should allow passengers to check in', function(){
 			airport.checkIn(passenger);
 			expect(airport.passengers.length).toEqual(1)
+		});
+
+		it('should allow passengers to check out', function(){
+			airport.checkIn(passenger)
+			airport.checkOut(passenger)
+			expect(airport.passengers.length).toEqual(0)	
 		});
 
 	});
