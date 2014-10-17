@@ -36,6 +36,13 @@ describe('The airport', function(){
 			expect(airport.takeOff(plane)).toEqual('Plane has already taken off')
 		});
 
+		it('should know how many planes it has', function(){
+			airport.land(plane);
+			jet = new Plane
+			airport.land(jet);
+			expect(airport.planes.length).toEqual(2)
+		});
+
 
 
 	});
