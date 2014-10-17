@@ -43,6 +43,10 @@ describe('The airport', function(){
 			expect(airport.planes.length).toEqual(2)
 		});
 
+		it('should have a capacity of planes it can accept', function(){
+			expect(airport.capacity).toEqual(10)
+		});
+
 
 
 	});
