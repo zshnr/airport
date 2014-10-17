@@ -1,6 +1,7 @@
 function Airport(){
 	this.planes = [];
 	this.passengers = [];
+	this.capacity = 10;
 };
 
 function Plane(){};
