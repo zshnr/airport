@@ -25,3 +25,10 @@ Airport.prototype.takeOff = function(planes) {
 Airport.prototype.checkIn = function(passenger) {
 	this.passengers.push(passenger);
 };
+
+Airport.prototype.canLand = function(plane) {
+	if(this.planes.length < this.capacity)
+		return 'You are clear to land'
+	else
+		return 'Sorry, the airport is full'
+};
