@@ -14,7 +14,7 @@ describe('The airport', function(){
 			expect(airport.planes instanceof Array).toBe(true)
 		});
 
-		it('should accept a plane', function(){
+		it('should let a plane land', function(){
 			airport.land(plane);
 			expect(airport.planes.length).toEqual(1)
 		});
@@ -23,6 +23,11 @@ describe('The airport', function(){
 			airport.land(plane);
 			airport.takeoff(plane);
 			expect(airport.planes.length).toEqual(0)
+		});
+
+		it('should not let the same place land twice', function(){
+			airport.land(plane)
+			expect(airport.land(plane)).toEqual('Plane has already landed')
 		});
 
 	});
@@ -42,16 +47,11 @@ describe('The airport', function(){
 			expect(airport.passengers.length).toEqual(1)
 		});
 
-		it('should let passenger depart', function(){
-			airport.checkIn(passenger);
-			airport.checkOut(Passenger);
-			expect(airport.passengers.length).toEqual(0)
-
-		it('should allow passengers to check out', function(){
-			airport.checkIn(passenger)
-			airport.checkOut(passenger)
-			expect(airport.passengers.length).toEqual(0)	
-		});
+		// it('should allow passengers to check out', function(){
+		// 	airport.checkIn(passenger)
+		// 	airport.checkOut(passenger)
+		// 	expect(airport.passengers.length).toEqual(0)	
+		// });
 
 	});
 });
