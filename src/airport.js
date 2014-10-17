@@ -14,7 +14,7 @@ Airport.prototype.land = function(plane) {
 		return 'Plane has already landed'
 };
 
-Airport.prototype.takeoff = function(plane, number) {
+Airport.prototype.takeOff = function(plane) {
 	this.planes.splice(this.planes.indexOf(plane),1)[0];
 };
 

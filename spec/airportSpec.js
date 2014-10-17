@@ -21,13 +21,19 @@ describe('The airport', function(){
 
 		it('should let the plane take off', function(){
 			airport.land(plane);
-			airport.takeoff(plane);
+			airport.takeOff(plane);
 			expect(airport.planes.length).toEqual(0)
 		});
 
 		it('should not let the same place land twice', function(){
 			airport.land(plane)
 			expect(airport.land(plane)).toEqual('Plane has already landed')
+		});
+
+		it('should not let the same place take off twice', function(){
+			airport.land(plane);
+			airport.takeOff(plane);
+			expect(airport.takeOff(plane)).toEqual('Plane has already taken off')
 		});
 
 	});
