@@ -16,7 +16,7 @@ describe('The airport', function(){
 
 		it('should let a plane land', function(){
 			airport.land(plane);
-			expect(airport.planes.length).toEqual(1)
+			expect(airport.planes).toEqual([plane])
 		});
 
 		it('should let the plane take off', function(){
@@ -35,6 +35,8 @@ describe('The airport', function(){
 			airport.takeOff(plane);
 			expect(airport.takeOff(plane)).toEqual('Plane has already taken off')
 		});
+
+
 
 	});
 
