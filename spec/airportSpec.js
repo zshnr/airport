@@ -47,6 +47,12 @@ describe('The airport', function(){
 			expect(airport.capacity).toEqual(10)
 		});
 
+		it('should let a plane land if its not full',function(){
+			airport.land(plane)
+			jet = new Plane
+			expect(airport.land(jet)).toEqual('You are clear to land')
+		});
+
 
 
 	});
