@@ -76,11 +76,11 @@ describe('The airport', function(){
 			expect(airport.passengers.length).toEqual(1)
 		});
 
-		// it('should allow passengers to check out', function(){
-		// 	airport.checkIn(passenger)
-		// 	airport.checkOut(passenger)
-		// 	expect(airport.passengers.length).toEqual(0)	
-		// });
+		it('should allow passengers to check out', function(){
+			airport.checkIn(passenger)
+			airport.checkOut(passenger)
+			expect(airport.passengers.length).toEqual(0)	
+		});
 
 	});
 });

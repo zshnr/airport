@@ -8,6 +8,13 @@ function Plane(){};
 
 function Passenger(){};
 
+Airport.prototype.canLand = function(plane) {
+	if(this.planes.length < this.capacity)
+		return 'You are clear to land'
+	else
+		return 'Sorry, the airport is full'
+};
+
 Airport.prototype.land = function(plane) {
 	if(this.planes.indexOf(plane) === -1)
 		this.planes.push(plane)
@@ -26,9 +33,10 @@ Airport.prototype.checkIn = function(passenger) {
 	this.passengers.push(passenger);
 };
 
-Airport.prototype.canLand = function(plane) {
-	if(this.planes.length < this.capacity)
-		return 'You are clear to land'
+Airport.prototype.checkOut = function(passenger) {
+	if(this.passengers.indexOf(passenger) !== -1)
+		this.passengers.splice(this.planes.indexOf(passenger),1)[0];
 	else
-		return 'Sorry, the airport is full'
+		return 'Passenger has already left the airport'
 };
+
