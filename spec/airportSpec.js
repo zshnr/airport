@@ -52,16 +52,13 @@ describe('The airport', function(){
 		});
 
 		it('should not let a plane land if its not full', function(){
-			// for(i=0; i < 10; i+1){
-			// 	plane = new Plane;
-			// 	airport.land(plane);
-			// }
+			for(var i = 0; i < 10; i++){
+				plane = new Plane;
+				airport.land(plane);
+			};
 			jet = new Plane;
-			expect(airport.land(jet)).toEqual('Sorry, the airport is full')
+			expect(airport.canLand(jet)).toEqual('Sorry, the airport is full')
 		});
-
-
-
 	});
 
 	describe('interacts with passenger:', function(){
